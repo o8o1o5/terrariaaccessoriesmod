@@ -40,15 +40,19 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
     compileOnly("top.theillusivec4.curios:curios-neoforge:9.3.1+1.21.1:api")
     runtimeOnly("top.theillusivec4.curios:curios-neoforge:9.3.1+1.21.1")
+    implementation files("libs/patchouli-1.21-87-neoforge.jar")
 }
 
 repositories {
     mavenLocal()
 
-    // Curios API가 있는 공식 Maven 저장소
     maven {
         name = "Curios"
         url = "https://maven.theillusivec4.top/"
+    }
+
+    flatDir {
+        dirs 'libs'
     }
 }
 

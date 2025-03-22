@@ -1,0 +1,12 @@
+{
+  "name": "Terraria Acc Guide",
+  "landing_text": "read guidances for terraria accessories!",
+  "creative_tab": "minecraft:tools_and_utilities",
+  "use_resource_pack": true,
+  "pamphlet": true,
+  "macros": {
+    "$(item)": "$(bold)$(#ffcc00)",
+    "$(warn)": "$(bold)$(#f00)",
+    "$(tip)": "$(italic)$(#77f)"
+  }
+}

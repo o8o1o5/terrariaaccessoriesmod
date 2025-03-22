@@ -1,6 +1,6 @@
 package dev.o8o1o5.terrariaaccessories.registry;
 
-import dev.o8o1o5.terrariaaccessories.Terrariaaccessories;
+import dev.o8o1o5.terrariaaccessories.TerrariaAccessories;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Terrariaaccessories.MODID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TerrariaAccessories.MODID);
 
     public static final Supplier<CreativeModeTab> TERRARIA_ACCESSORIES = CREATIVE_MODE_TAB.register("terraria_accessories_tab",
             () -> CreativeModeTab.builder()

@@ -1,6 +1,6 @@
 package dev.o8o1o5.terrariaaccessories.registry;
 
-import dev.o8o1o5.terrariaaccessories.Terrariaaccessories;
+import dev.o8o1o5.terrariaaccessories.TerrariaAccessories;
 import dev.o8o1o5.terrariaaccessories.items.CloudInAJarItem;
 import dev.o8o1o5.terrariaaccessories.items.GlassJarItem;
 import dev.o8o1o5.terrariaaccessories.items.HermesBootsItem;
@@ -11,7 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
-            DeferredRegister.createItems(Terrariaaccessories.MODID);
+            DeferredRegister.createItems(TerrariaAccessories.MODID);
 
     public static final DeferredItem<Item> GLASS_JAR = ITEMS.register("glass_jar",
             () -> new GlassJarItem(new Item.Properties()));

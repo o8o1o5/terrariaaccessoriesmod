@@ -39,7 +39,7 @@ public class CloudInAJarItem extends Item implements ICurioItem {
         }
 
         if (!player.equals(Minecraft.getInstance().player)) return;
-/
+
         if (!player.onGround()) {
             ticksInAir.put(uuid, ticksInAir.getOrDefault(uuid, 0) + 1);
         } else {

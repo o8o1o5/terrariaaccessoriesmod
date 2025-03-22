@@ -1,0 +1,17 @@
+{
+  "name": "Hermes Boots",
+  "icon": "terrariaaccessories:hermes_boots",
+  "category": "terrariaaccessories:main",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "terrariaaccessories:hermes_boots",
+      "title": "Hermes Boots",
+      "text": "Surely, the messenger of the gods once descended wearing these very boots.$(p)The longer you run, the faster you become."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(7)Acquisition:$(br)$()This item cannot be crafted. It can only be discovered during your adventures. $(p)§7Tip:§f Keep a sharp eye on underground chests—you might just get lucky!"
+    }
+  ]
+}
