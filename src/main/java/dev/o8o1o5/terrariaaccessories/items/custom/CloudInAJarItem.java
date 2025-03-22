@@ -1,5 +1,6 @@
 package dev.o8o1o5.terrariaaccessories.items;
 
+import dev.o8o1o5.terrariaaccessories.core.CurioManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -15,10 +16,8 @@ import java.util.Map;
 import java.util.UUID;
 
 public class CloudInAJarItem extends Item implements ICurioItem {
-
-    private static final Map<UUID, Boolean> canDoubleJump = new HashMap<>();
-    private static final Map<UUID, Boolean> jumpKeyWasDown = new HashMap<>();
     private static final Map<UUID, Integer> ticksInAir = new HashMap<>();
+    private static final Map<UUID, Boolean> jumpKeyWasDown = new HashMap<>();
 
     public CloudInAJarItem(Properties properties) {
         super(properties);
@@ -30,9 +29,12 @@ public class CloudInAJarItem extends Item implements ICurioItem {
         if (!(entity instanceof Player player)) return;
         UUID uuid = player.getUUID();
 
+        // Cloud 착용 여부 저장
+        CurioManager.hasCloudJar.put(uuid, true);
+
         if (!player.level().isClientSide) {
             if (player.onGround()) {
-                canDoubleJump.put(uuid, true);
+                CurioManager.usedCloud.put(uuid, false);
                 ticksInAir.put(uuid, 0);
             }
             return;
@@ -40,25 +42,38 @@ public class CloudInAJarItem extends Item implements ICurioItem {
 
         if (!player.equals(Minecraft.getInstance().player)) return;
 
-        if (!player.onGround()) {
-            ticksInAir.put(uuid, ticksInAir.getOrDefault(uuid, 0) + 1);
-        } else {
-            ticksInAir.put(uuid, 0);
-        }
-
         boolean jumpNow = Minecraft.getInstance().options.keyJump.isDown();
         boolean jumpBefore = jumpKeyWasDown.getOrDefault(uuid, false);
         boolean justPressed = jumpNow && !jumpBefore;
         int airTicks = ticksInAir.getOrDefault(uuid, 0);
 
-        if (justPressed && airTicks > 1 && canDoubleJump.getOrDefault(uuid, false)) {
+        if (!player.onGround()) {
+            ticksInAir.put(uuid, airTicks + 1);
+        } else {
+            ticksInAir.put(uuid, 0);
+        }
+
+        // ✅ 먼저 Cloud 사용 처리
+        if (justPressed && airTicks > 1 && !CurioManager.usedCloud.getOrDefault(uuid, false)) {
+            CurioManager.usedCloud.put(uuid, true); // 먼저 표시!
+            CurioManager.jumpHandledByCloudJar.put(uuid, true);
+
             player.setDeltaMovement(player.getDeltaMovement().x, 0.5, player.getDeltaMovement().z);
             player.hasImpulse = true;
             player.level().playSound(player, player.blockPosition(), SoundEvents.BREEZE_WIND_CHARGE_BURST.value(), SoundSource.PLAYERS, 1.0F, 1.0F);
-
-            canDoubleJump.put(uuid, false);
         }
 
+        CurioManager.jumpHandledByCloudJar.put(uuid, false);
         jumpKeyWasDown.put(uuid, jumpNow);
+    }
+
+    @Override
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+        CurioManager.hasCloudJar.put(slotContext.entity().getUUID(), true);
+    }
+
+    @Override
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+        CurioManager.hasCloudJar.put(slotContext.entity().getUUID(), false);
     }
 }

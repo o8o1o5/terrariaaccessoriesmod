@@ -21,6 +21,8 @@ public class ModCreativeModTabs {
                     .displayItems(((itemDisplayParameters, output) -> {
                         output.accept(ModItems.GLASS_JAR);
                         output.accept(ModItems.HERMES_BOOTS);
+                        output.accept(ModItems.SAILFISH_BOOTS);
+                        output.accept(ModItems.ROCKET_BOOTS);
                         output.accept(ModItems.CLOUD_IN_A_JAR);
                     })).build());
 
