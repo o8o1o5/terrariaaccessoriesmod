@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "terrariaaccessories:hermes_boots",
-    "terrariaaccessories:cloud_in_a_jar"
+    "terrariaaccessories:sailfish_boots",
+    "terrariaaccessories:rocket_boots",
+    "terrariaaccessories:cloud_in_a_jar",
+    "terrariaaccessories:aglet",
+    "terrariaaccessories:spectre_boots"
   ]
 }

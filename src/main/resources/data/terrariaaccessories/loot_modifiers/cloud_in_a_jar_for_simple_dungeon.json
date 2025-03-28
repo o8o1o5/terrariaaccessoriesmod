@@ -3,12 +3,12 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:chests/abandoned_mineshaft"
+      "loot_table_id": "minecraft:chests/simple_dungeon"
     },
     {
       "condition": "minecraft:random_chance",
       "chance": 0.125
     }
   ],
-  "item": "terrariaaccessories:hermes_boots"
+  "item": "terrariaaccessories:cloud_in_a_jar"
 }

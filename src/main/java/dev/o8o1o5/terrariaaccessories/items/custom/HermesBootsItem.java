@@ -1,4 +1,4 @@
-package dev.o8o1o5.terrariaaccessories.items;
+package dev.o8o1o5.terrariaaccessories.items.custom;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;

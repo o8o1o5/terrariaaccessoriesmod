@@ -1,8 +1,9 @@
 package dev.o8o1o5.terrariaaccessories;
 
 import com.mojang.logging.LogUtils;
-import dev.o8o1o5.terrariaaccessories.registry.ModCreativeModTabs;
-import dev.o8o1o5.terrariaaccessories.registry.ModItems;
+import dev.o8o1o5.terrariaaccessories.items.ModCreativeModTabs;
+import dev.o8o1o5.terrariaaccessories.items.ModItems;
+import dev.o8o1o5.terrariaaccessories.loot.ModLootModifiers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Blocks;
@@ -37,6 +38,8 @@ public class TerrariaAccessories {
         ModItems.register(modEventBus);
 
         ModCreativeModTabs.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Terrariaaccessories) to respond directly to events.

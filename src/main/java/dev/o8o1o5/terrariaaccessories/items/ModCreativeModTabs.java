@@ -1,4 +1,4 @@
-package dev.o8o1o5.terrariaaccessories.registry;
+package dev.o8o1o5.terrariaaccessories.items;
 
 import dev.o8o1o5.terrariaaccessories.TerrariaAccessories;
 import net.minecraft.core.registries.Registries;
@@ -19,11 +19,14 @@ public class ModCreativeModTabs {
                     .icon(() -> new ItemStack(ModItems.HERMES_BOOTS.get()))
                     .title(Component.translatable("itemGroup.terrariaaccessories.terraria_accessories"))
                     .displayItems(((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.GLASS_JAR);
+                        // output.accept(ModItems.GLASS_JAR);
                         output.accept(ModItems.HERMES_BOOTS);
                         output.accept(ModItems.SAILFISH_BOOTS);
                         output.accept(ModItems.ROCKET_BOOTS);
+                        output.accept(ModItems.SPECTRE_BOOTS);
                         output.accept(ModItems.CLOUD_IN_A_JAR);
+                        output.accept(ModItems.AGLET);
+                        output.accept(ModItems.ANKLET_OF_THE_WIND);
                     })).build());
 
     public static void register(IEventBus eventBus) {

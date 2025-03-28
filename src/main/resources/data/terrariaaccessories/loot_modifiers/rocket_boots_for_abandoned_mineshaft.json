@@ -7,8 +7,8 @@
     },
     {
       "condition": "minecraft:random_chance",
-      "chance": 0.125
+      "chance": 0.075
     }
   ],
-  "item": "terrariaaccessories:hermes_boots"
+  "item": "terrariaaccessories:rocket_boots"
 }

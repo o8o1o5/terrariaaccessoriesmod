@@ -1,7 +1,8 @@
-package dev.o8o1o5.terrariaaccessories.items;
+package dev.o8o1o5.terrariaaccessories.items.custom;
 
 import dev.o8o1o5.terrariaaccessories.core.CurioManager;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -60,6 +61,19 @@ public class CloudInAJarItem extends Item implements ICurioItem {
 
             player.setDeltaMovement(player.getDeltaMovement().x, 0.5, player.getDeltaMovement().z);
             player.hasImpulse = true;
+
+
+            for (int i = 0; i < 25; i++) { // 성글하게 하려면 개수는 줄이고
+                double offsetX = (player.getRandom().nextDouble() - 0.5) * 2; // -1.25 ~ +1.25
+                double offsetZ = (player.getRandom().nextDouble() - 0.5) * 2;
+                double velY = 0.02 + player.getRandom().nextDouble() * 0.03; // 살짝만 뜨게
+
+                player.level().addParticle(ParticleTypes.CLOUD,
+                        player.getX() + offsetX,
+                        player.getY() + 0.1,
+                        player.getZ() + offsetZ,
+                        0.0, velY, 0.0);
+            }
             player.level().playSound(player, player.blockPosition(), SoundEvents.BREEZE_WIND_CHARGE_BURST.value(), SoundSource.PLAYERS, 1.0F, 1.0F);
         }
 

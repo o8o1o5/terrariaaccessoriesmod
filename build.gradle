@@ -40,7 +40,6 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
     compileOnly("top.theillusivec4.curios:curios-neoforge:9.3.1+1.21.1:api")
     runtimeOnly("top.theillusivec4.curios:curios-neoforge:9.3.1+1.21.1")
-    implementation files("libs/patchouli-1.21-87-neoforge.jar")
 }
 
 repositories {
@@ -49,10 +48,6 @@ repositories {
     maven {
         name = "Curios"
         url = "https://maven.theillusivec4.top/"
-    }
-
-    flatDir {
-        dirs 'libs'
     }
 }
 
@@ -75,3 +70,10 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
 }
 sourceSets.main.resources.srcDir generateModMetadata
 neoForge.ideSyncTask generateModMetadata
+
+sourceSets {
+    data {
+        java.srcDirs = []
+        resources.srcDirs = ['src/generated/resources']
+    }
+}

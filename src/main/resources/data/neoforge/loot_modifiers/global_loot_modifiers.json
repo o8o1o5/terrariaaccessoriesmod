@@ -1,6 +1,25 @@
 {
-  "replace": false,
   "entries": [
-    "terrariaaccessories:hermes_boots_for_abandoned_mineshaft"
-  ]
+    "terrariaaccessories:hermes_boots_for_simple_dungeon",
+    "terrariaaccessories:hermes_boots_for_abandoned_mineshaft",
+    "terrariaaccessories:hermes_boots_for_stronghold_corridor",
+    "terrariaaccessories:hermes_boots_for_stronghold_crossing",
+    "terrariaaccessories:hermes_boots_for_stronghold_library",
+
+    "terrariaaccessories:cloud_in_a_jar_for_simple_dungeon",
+    "terrariaaccessories:cloud_in_a_jar_for_abandoned_mineshaft",
+    "terrariaaccessories:cloud_in_a_jar_for_stronghold_corridor",
+    "terrariaaccessories:cloud_in_a_jar_for_stronghold_crossing",
+    "terrariaaccessories:cloud_in_a_jar_for_stronghold_library",
+
+    "terrariaaccessories:rocket_boots_for_simple_dungeon",
+    "terrariaaccessories:rocket_boots_for_abandoned_mineshaft",
+    "terrariaaccessories:rocket_boots_for_stronghold_corridor",
+    "terrariaaccessories:rocket_boots_for_stronghold_crossing",
+    "terrariaaccessories:rocket_boots_for_stronghold_library",
+
+    "terrariaaccessories:sailfish_boots_for_fishing",
+    "terrariaaccessories:sailfish_boots_for_shipwreck_treasure"
+  ],
+  "replace": false
 }

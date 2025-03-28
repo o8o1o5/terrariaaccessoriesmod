@@ -1,15 +1,13 @@
-package dev.o8o1o5.terrariaaccessories.items;
+package dev.o8o1o5.terrariaaccessories.items.custom;
 
-import dev.o8o1o5.terrariaaccessories.registry.ModItems;
+import dev.o8o1o5.terrariaaccessories.items.ModItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
 public class GlassJarItem extends Item {
